@@ -1,0 +1,8 @@
+<?php 
+$objectManager = \Magento\Framework\App\ObjectManager::getInstance();
+$customerSession = $objectManager->create('Magento\Customer\Model\Session');
+if($customerSession->isLoggedIn()) : ?>
+    <li class="link logout" data-bind="scope: 'logout'">
+        <a  href="<?php echo $this->getUrl("customer/account/logout/");?>"><?php echo __('Logout')?></a>
+    </li>
+?>
